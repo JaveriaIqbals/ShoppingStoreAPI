@@ -14,5 +14,12 @@ namespace ShoppingStoreAPI.Models
 
         [Required]
         public double ProdPrice { get; set; }
+
+        // FK Product ID will be added inside Customers table.
+        public ICollection<Customer> customers { get; set; }
+        public Product()
+        {
+            customers = new List<Customer>();   
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ShoppingStoreAPI.Models;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ShoppingStoreAPI
 {
@@ -15,7 +17,9 @@ namespace ShoppingStoreAPI
         [Required]
         public string CustContact { get; set; } = "";
 
-        public int ProdId { get; set; } = 0;
+        //[ForeignKey("ProdId")]
+        //public int ProdId { get; set; } = 0;
 
+       
     }
 }

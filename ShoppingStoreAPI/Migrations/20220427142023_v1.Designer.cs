@@ -11,7 +11,7 @@ using ShoppingStoreAPI.DATA;
 namespace ShoppingStoreAPI.Migrations
 {
     [DbContext(typeof(ShoppingStoreDbContext))]
-    [Migration("20220426155917_v1")]
+    [Migration("20220427142023_v1")]
     partial class v1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

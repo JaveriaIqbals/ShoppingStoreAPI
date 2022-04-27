@@ -15,7 +15,7 @@ namespace ShoppingStoreAPI.API
         }
 
         // Get List of All Customers
-        [HttpGet("Get List Of Cust")]
+        [HttpGet("GCL")]
         public async Task<List<Customer>> GetCustList()
         {
             return await _iss.GetAllCustomers();
@@ -29,7 +29,7 @@ namespace ShoppingStoreAPI.API
             return await _iss.GetCustomerById(id);  
         }
 
-        [HttpPost("AddCustomer")]
+        [HttpPost("AddCust")]
         public async Task<ActionResult<Customer>> PostCustomer(Customer cust)
         {
             var newCust = await _iss.AddCustomer(cust); // add into DB
@@ -37,7 +37,7 @@ namespace ShoppingStoreAPI.API
             return CreatedAtAction(nameof(GetCustById), new { id = newCust.CustId}, newCust);
         }
 
-        [HttpPut("put/{id}")] // edit your customer info
+        [HttpPut("Put/{id}")] // edit your customer info
         public async Task<ActionResult> PutCustomer(int id, Customer editCust)
         {
             if (id != editCust.CustId)
@@ -51,7 +51,7 @@ namespace ShoppingStoreAPI.API
             return NoContent();
         }
 
-        [HttpDelete("delete_customer")]
+        [HttpDelete("DelCust")]
         public async Task<ActionResult> DeleteCust(int id)
         {
             var cust = await _iss.GetCustomerById(id);
